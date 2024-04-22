@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Washing Machine Store</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .nav-item.active {
+      font-weight: bold;
+    }
+    section {
+      display: none;
+    }
+    #home:target,
+    #about:target,
+    #products:target,
+    #services:target,
+    #contact:target {
+      display: block;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-image: linear-gradient(to right, #16afea, #3f97e8, #6d7cd9, #925bbc, #a93191);
+    }
+    .navbar{
+      background-image: linear-gradient(to right, #16afea, #3f97e8, #6d7cd9, #925bbc, #a93191);
+      color: black;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    #home img {
+      display: block;
+      margin: 0 auto;
+      height: 500px;
+    }  
+    .card{
+      background-color:lightgray;
+    }
+    .img-fluid{
+      height: 300px;
+      width: 500px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#"> WALTON Washing Machine</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#Warranty">Warranty</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="home" style="background-color: transparent;">
+    <div class="container">
+      <div class="row">-
+        <div class="col-md-12 text-center">
+          <div class="card">
+            <img src="washing.png" class="card-img-top" alt="Home Image" width="500">
+            <div class="card-body">
+              <h1 class="card-title">Welcome to WALTON Washing Machine Store</h1>
+              <p class="card-text">We provide high-quality washing machines to make your life easier.</p>
+              <a href="#products" class="btn btn-primary">Explore Our Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>About Our Washing Machines</h2>
+          <p>Our WALTON washing machines are designed to simplify your laundry chores with advanced features and cutting-edge technology. From efficient cleaning to gentle fabric care, our machines deliver outstanding performance. With user-friendly controls and sleek designs, they seamlessly blend into any modern home environment. Experience the convenience of innovative washing solutions tailored to meet your needs. Trust our washing machines to deliver exceptional results, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Explore Our Products</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <img src="w1.jpg" class="img-fluid" alt="Image 1">
+        </div>
+        <div class="col-md-6">
+            <img src="w2.png" class="img-fluid" alt="Image 2">
+        </div>
+        <div class="col-md-6">
+            <img src="w3.png" class="img-fluid" alt="Image 3">
+        </div>
+        <div class="col-md-6">
+            <img src="w4.png"  class="img-fluid" alt="Image 4">
+        </div>
+    </div>
+    
+  </section>
+  
+  <section id="services">
+    <div class="container">
+      <div class="row"> 
+        <div class="col-md-12">
+          <h2>Our Services</h2>
+          <p>At WALTON  Machine Store, we go beyond just providing exceptional products. Our comprehensive services ensure that your washing machine purchase is hassle-free and continues to perform optimally. From professional installation to regular maintenance checks, our skilled technicians are dedicated to ensuring the longevity and efficiency of your appliance. Need troubleshooting or repairs? Our prompt and reliable service team is here to assist you. Experience peace of mind knowing that your washing machine is in expert hands. Discover our range of services and let us take care of your laundry needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Contact Us</h2>
+          <p>Have questions or need assistance? Feel free to reach out to us! Our friendly and knowledgeable team is ready to help you with any inquiries regarding our products or services. Whether you're looking for product recommendations, scheduling a service appointment, or simply want to provide feedback, we're here to listen and assist you every step of the way. Contact us today via phone, email, or visit our store in person. We look forward to hearing from you</p>
+          <p>Phone: 048764535
+            566</p>
+            <p>Email: WALTON@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  </html>
+  

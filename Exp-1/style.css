@@ -1,17 +1,11 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     margin: 0;
     padding: 0;
     color: #fff; 
     background: linear-gradient(90deg in oklab, blue, red);
     
-}
-
-header {
-    background: linear-gradient(90deg in oklab, blue, red);
-    text-align: center;
-    padding: 20px 0;
 }
 
 h1 {
@@ -31,16 +25,12 @@ main {
 
 .box {
     background-color: rgba(255, 255, 255, 0.8); 
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     color: black;
 }
 
-h2 {
-    color: #3498db;
-}
 
 ul {
     list-style-type: none;

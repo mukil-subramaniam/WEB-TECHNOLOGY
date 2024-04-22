@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       ol {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+       }
+       li {
+        margin-bottom: 10px;
+       }
+       label {
+        display: inline-block;
+        width: 150px; 
+        text-align: right;
+        margin-right: 10px;
+        color: white;
+       }
+       input, select {
+        width: 200px; 
+       }
+       button {
+        margin-left: 160px; 
+       }
+    </style>
+</head>
+<body background="backgrnd.png">
+    
+    <ol>
+      <form method="post">
+        <ol>
+            <li>
+                <label for="name">Enter the Name:</label>
+                <input type="text" id="name" name="names">
+            </li>
+            <li>
+                <label for="address">Enter the Address:</label>
+                <input type="text" id="address">
+            </li>
+            <li>
+                <label for="product">Select the Product:</label>
+                <select id="product" class="input">
+                    <option value="washing">Washing</option>
+                    <option value="ironing">Ironing</option>
+                    <option value="dry-cleaning">Dry Cleaning</option>
+                    <option value="folding">Folding</option>
+                    <option value="starching">Starching</option>
+                </select>
+            </li>
+            <li>
+                <label for="quantity">Select the Quantity:</label>
+                <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </li>
+            <li>
+                <label for="pay">Payment:</label>
+                <select id="pay">
+                    <option value="UPI">UPI</option>
+                    <option value="NET BANKING">NET BANKING</option>
+                </select>
+                
+            </li>
+            <button onclick="calculateTotal()">Calculate Total</button>
+        </ol>
+      </form>
+    </ol>
+
+<script>
+    function calculateTotal() {
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let product = document.getElementById("product").value;
+        let quantity = parseInt(document.getElementById("quantity").value);
+        let pricePerUnit = getProductPrice(product);
+        let totalPrice = pricePerUnit * quantity;
+        let gst = calculateGST(totalPrice);
+        let totalAmount = totalPrice + gst;
+        let Payment=document.getElementById("pay").value;
+        
+
+            
+        document.write("<p>Total Payment:</p>");
+        document.write("<p>Name: " + name + "</p>");
+        document.write("<p>Address: " + address + "</p>");
+        document.write("<p>Product: " + product + "</p>");
+        document.write("<p>Product Price: $" + pricePerUnit.toFixed(2) + "</p>");
+        document.write("<p>Quantity: " + quantity + "</p>");
+        document.write("<p>Total Price: $" + totalPrice.toFixed(2) + "</p>");
+        document.write("<p>GST: $" + gst.toFixed(2) + "</p>");
+        document.write("<p><strong>Total Amount: $" + totalAmount.toFixed(2) + "</strong></p>");
+        document.write("<p>Payment: "+Payment);
+    }
+
+    function getProductPrice(product) {
+        switch (product) {
+            case "washing":
+                return 10; 
+            case "ironing":
+                return 15; 
+            case "dry-cleaning":
+                return 20; 
+            case "folding":
+                return 8; 
+            case "starching":
+                return 12; 
+            default:
+                return 0;
+        }
+    }
+
+    function calculateGST(amount) {
+        const GST_RATE = 0.18; 
+        return amount * GST_RATE;
+    }
+</script>
+</body>
+</html>

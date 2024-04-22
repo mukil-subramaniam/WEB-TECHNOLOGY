@@ -1,0 +1,22 @@
+.name{  
+    margin:0px 90px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.profile{
+    background-color: beige;
+}
+
+.content{
+    float:right
+}
+.left{
+    float:left;
+    font-size: 15p;
+}
+
+td,th{
+      padding:10px
+}
+.size{
+    font-size: 5px;
+}
