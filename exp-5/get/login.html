@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form using GET method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="radio"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+
+            display: inline-block;
+           
+            /* Add margin-bottom to push radio buttons slightly down */
+            margin-bottom: 5px;
+            
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #male{
+            margin-bottom: 8px;
+            padding: 5;
+        }
+        #female{
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Using GET Method</h1>
+        <form action="http://localhost:3001/login" method="get">
+            <label for="username">Employee Name</label>
+            <input type="text" id="username" name="username" value=""/>
+
+            <label for="id">Employee ID</label>
+            <input type="text" id="id" name="id" value=""/>
+
+            <label for="branch">Branch</label>
+            <input type="text" id="branch" name="branch" value=""/>
+
+            <label for="gender">Gender</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+
+            <label for="phno">Mobile No</label>
+            <input type="text" id="phno" name="phno" value=""/>
+
+            <label for="branchadd">Branch Address</label>
+            <input type="text" id="branchadd" name="branchadd" value=""/>
+
+            <input type="submit" name="login" value="Login"/>
+        </form>
+    </div>
+</body>
+</html>

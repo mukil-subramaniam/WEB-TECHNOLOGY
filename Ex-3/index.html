@@ -5,127 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       ol {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-       }
-       li {
-        margin-bottom: 10px;
-       }
-       label {
-        display: inline-block;
-        width: 150px; 
-        text-align: right;
-        margin-right: 10px;
-        color: white;
-       }
-       input, select {
-        width: 200px; 
-       }
-       button {
-        margin-left: 160px; 
-       }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+        ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+        label {
+            display: inline-block;
+            width: 150px; 
+            text-align: right;
+            margin-right: 10px;
+            color: #333;
+        }
+        input, select {
+            width: calc(100% - 170px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .product-group {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
     </style>
 </head>
-<body background="backgrnd.png">
-    
-    <ol>
-      <form method="post">
+<body>
+    <form method="post">
+        <h2>Order Form</h2>
         <ol>
             <li>
-                <label for="name">Enter the Name:</label>
-                <input type="text" id="name" name="names">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="names" required>
             </li>
             <li>
-                <label for="address">Enter the Address:</label>
-                <input type="text" id="address">
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
             </li>
-            <li>
-                <label for="product">Select the Product:</label>
-                <select id="product" class="input">
-                    <option value="washing">Washing</option>
-                    <option value="ironing">Ironing</option>
-                    <option value="dry-cleaning">Dry Cleaning</option>
-                    <option value="folding">Folding</option>
-                    <option value="starching">Starching</option>
-                </select>
-            </li>
-            <li>
-                <label for="quantity">Select the Quantity:</label>
-                <select id="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </li>
-            <li>
-                <label for="pay">Payment:</label>
-                <select id="pay">
-                    <option value="UPI">UPI</option>
-                    <option value="NET BANKING">NET BANKING</option>
-                </select>
-                
-            </li>
-            <button onclick="calculateTotal()">Calculate Total</button>
+            <div class="product-group">
+                <li>
+                    <label for="product">Product:</label>
+                    <select class="product" id="product">
+                        <option value="washing">Washing</option>
+                        <option value="ironing">Ironing</option>
+                        <option value="dry-cleaning">Dry Cleaning</option>
+                        <option value="folding">Folding</option>
+                        <option value="starching">Starching</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="quantity">Quantity:</label>
+                    <select class="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+            </div>
+            <button type="button" onclick="addProduct()">Add Product</button>
+            <button type="button" onclick="calculateTotal()">Calculate Total</button>
         </ol>
-      </form>
-    </ol>
+    </form>
 
-<script>
-    function calculateTotal() {
-        let name = document.getElementById("name").value;
-        let address = document.getElementById("address").value;
-        let product = document.getElementById("product").value;
-        let quantity = parseInt(document.getElementById("quantity").value);
-        let pricePerUnit = getProductPrice(product);
-        let totalPrice = pricePerUnit * quantity;
-        let gst = calculateGST(totalPrice);
-        let totalAmount = totalPrice + gst;
-        let Payment=document.getElementById("pay").value;
-        
+    <script>
+        function addProduct() {
+            const productGroup = document.createElement('div');
+            productGroup.classList.add('product-group');
 
-            
-        document.write("<p>Total Payment:</p>");
-        document.write("<p>Name: " + name + "</p>");
-        document.write("<p>Address: " + address + "</p>");
-        document.write("<p>Product: " + product + "</p>");
-        document.write("<p>Product Price: $" + pricePerUnit.toFixed(2) + "</p>");
-        document.write("<p>Quantity: " + quantity + "</p>");
-        document.write("<p>Total Price: $" + totalPrice.toFixed(2) + "</p>");
-        document.write("<p>GST: $" + gst.toFixed(2) + "</p>");
-        document.write("<p><strong>Total Amount: $" + totalAmount.toFixed(2) + "</strong></p>");
-        document.write("<p>Payment: "+Payment);
-    }
+            productGroup.innerHTML = `
+                <li>
+                    <label for="product">Product:</label>
+                    <select class="product" id="product">
+                        <option value="washing">Washing</option>
+                        <option value="ironing">Ironing</option>
+                        <option value="dry-cleaning">Dry Cleaning</option>
+                        <option value="folding">Folding</option>
+                        <option value="starching">Starching</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="quantity">Quantity:</label>
+                    <select class="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+            `;
 
-    function getProductPrice(product) {
-        switch (product) {
-            case "washing":
-                return 10; 
-            case "ironing":
-                return 15; 
-            case "dry-cleaning":
-                return 20; 
-            case "folding":
-                return 8; 
-            case "starching":
-                return 12; 
-            default:
-                return 0;
+            document.querySelector('form').appendChild(productGroup);
         }
-    }
 
-    function calculateGST(amount) {
-        const GST_RATE = 0.18; 
-        return amount * GST_RATE;
-    }
-</script>
+        function calculateTotal() {
+            let name = document.getElementById("name").value;
+            let address = document.getElementById("address").value;
+            let products = document.querySelectorAll('.product');
+            let quantities = document.querySelectorAll('.quantity');
+
+            let output = "<h2>Order Summary</h2>";
+
+            for (let i = 0; i < products.length; i++) {
+                let product = products[i].value;
+                let quantity = parseInt(quantities[i].value);
+                let pricePerUnit = getProductPrice(product);
+                let totalPrice = pricePerUnit * quantity;
+                let totalAmount = totalPrice;
+                output += `
+                    <div class="product-group">
+                        <p>Product ${i + 1}:</p>
+                        <p>Name: ${name}</p>
+                        <p>Address: ${address}</p>
+                        <p>Product: ${product}</p>
+                        <p>Product Price: $${pricePerUnit.toFixed(2)}</p>
+                        <p>Quantity: ${quantity}</p>
+                        <p><strong>Total Amount: $${totalAmount.toFixed(2)}</strong></p>
+                    </div>
+                `;
+            }
+
+            document.body.innerHTML = output;
+        }
+
+        function getProductPrice(product) {
+            switch (product) {
+                case "washing":
+                    return 10; 
+                case "ironing":
+                    return 15; 
+                case "dry-cleaning":
+                    return 20; 
+                case "folding":
+                    return 8; 
+                case "starching":
+                    return 12; 
+                default:
+                    return 0;
+            }
+        }
+    </script>
 </body>
 </html>

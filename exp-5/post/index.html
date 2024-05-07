@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f7ff; 
+    }
+    
+    h2 {
+      text-align: center;
+      padding: 40px 0;
+      color: #2a3a4e; 
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #2a3a4e; 
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    input[type="text"],
+    input[type="radio"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #fff; 
+      color: #2a3a4e; 
+      outline: none;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #4caf50; 
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049; 
+    }
+    
+    p {
+      margin-top: -10px;
+      text-align: center;
+      color: #2a3a4e; 
+    }
+  </style>
+</head>
+<body>
+    
+    <h2>USING POST METHOD</h2>
+    <form method="post" action="http://localhost:3000">
+        EMPLOYEE NAME <input type="text" name="username" value=""><br>
+        EMPLOYEE ID <input type="text" name="id" value=""><br>
+        BRANCH <input type="text" name="branch" value=""><br>
+        <label for="gender">GENDER</label><br>
+        <input type="radio" name="gender" value="female"> FEMALE 
+        <input type="radio" name="gender" value="male"> MALE <br><br>
+        MOBILE NO <input type="text" name="phno" value=""><br>
+        BRANCH ADDRESS <input type="text" name="branchadd" value=""><br>
+        <input type="submit" name="login" value="LOGIN">
+    </form>
+    
+</body>
+</html>
